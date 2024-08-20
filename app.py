@@ -2,6 +2,11 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+# Route to serve images from a custom directory
+@app.route('/assets/<path:filename>')
+def custom_static(filename):
+    return send_from_directory('assets/images', filename)
+
 @app.route('/')
 def home():
     return render_template('home.html')

@@ -33,6 +33,25 @@
         .header-right {
             float: right;
         }
+        .main-content {
+            display: flex;
+            align-items: center; /* Center items vertically */
+            justify-content: space-between; /* Space items horizontally */
+            padding: 20px;
+        }
+        .text {
+            flex: 1;
+            text-align: center;
+            padding-right: 20px; /* Space between text and video */
+        }
+        .video-container {
+            flex: 1;
+            text-align: center; /* Align video to the right */
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -47,9 +66,17 @@
   </div>
 </div>
 
-<div style="padding: 20px;">
-    <h1>Hobbies</h1>
-    <p>Hobbies information goes here</p>
+<div class="main-content">
+    <div class="text">
+        <h3>Strawberry Hill Hike</h3>
+        <p>Most Recent Hike!</p>
+    </div>
+    <div class="video-container">
+        <video width="50%" height="auto" controls>
+            <source src="{{ url_for('static', filename='videos/hike-video.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 </div>
 
 </body>

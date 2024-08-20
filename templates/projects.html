@@ -33,6 +33,39 @@
         .header-right {
             float: right;
         }
+        .center {
+            flex: 1;
+            text-align: center;
+        }
+        .project-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .left {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .left img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+        .right  {
+            flex: 1;
+            text-align: center;
+        }
+        .icons {
+          display: flex;
+          justify-content: center;
+          margin-top: 10px;
+        }
+        .icons a {
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -47,9 +80,44 @@
   </div>
 </div>
 
-<div style="padding: 20px;">
-    <h1>Projects</h1>
-    <p>Projects go here</p>
+<div class="project-list">
+    <div class="center">
+        <h1>Projects</h1>
+    </div>
+
+    <div class="project-container">
+        <div class="left">
+            <img src="{{ url_for('static', filename='images/aquaventure.jpg') }}" alt="aquaventure" width="800">
+        </div>
+        <div class="right">
+            <h3>AquaVenture Game</h3>
+            <p>This is the AquaVenture Game</p>
+            <div class="icons">
+                <a href="https://github.com/arelyyrosendes" target="_blank">
+                    <img src="{{ url_for('static', filename='images/code.jpg') }}" alt="GitHub" width="100">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-container">
+        <div class="left">
+            <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="aquaventure" width="800">
+        </div>
+
+        <div class="right">
+            <h3>Project 2</h3>
+            <p>This is the second project</p>
+            <div class="icons">
+                <a href="https://github.com/arelyyrosendes" target="_blank">
+                    <img src="{{ url_for('static', filename='images/code.jpg') }}" alt="GitHub" width="100">
+                </a>
+            </div>
+        </div>
+
+        
+    </div>
+
 </div>
 
 </body>

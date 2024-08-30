@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skills Page</title>
+    <style>
+        body { 
+            margin: 0;
+            font-family: 'Courier New', monospace;
+        }
+        .header {
+            overflow: hidden;
+            background-color: #e9c7c1;
+            padding: 20px 10px;
+        }
+        .header a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px; 
+            line-height: 25px;
+            border-radius: 4px;
+        }
+        .header a.logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .header a:hover {
+            background-color: white;
+            color: black;
+        }
+        .header-right {
+            float: right;
+        }
+        .title {
+            padding: 20px;
+            text-align: center;
+        }
+        .title h1 {
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .category {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 30%;
+        }
+        .category h2 {
+            text-align: center;
+            color: #e9c7c1;
+        }
+        .skills-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skills-list li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #e9c7c1;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .category {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+        #typing {
+            font-family: 'Courier New', monospace;
+            font-size: 24px;
+            white-space: pre;
+            border-right: 2px solid black;
+            display: inline-block;
+        }
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+        #typing {
+            animation: blink 0.5s step-end infinite alternate;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="/" class="logo">Arely's Website</a>
+        <div class="header-right">
+            <a class="active" href="/">Home</a>
+            <a href="/projects">Projects</a>
+            <a href="/skills">Skills</a>
+            <a href="/resume">Resume</a>
+            <a href="/hobbies">Hobbies</a>
+        </div>
+    </div>
+
+    <div class="title">
+        <div id="typing"></div>
+    </div>
+
+<div class="container">
+    <div class="category">
+        <h2>Back End</h2>
+        <ul class="skills-list">
+            <li>C/C++</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>MIPS Assembly</li>
+            <li>Bash/Shell Scripting</li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h2>Front End</h2>
+        <ul class="skills-list">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h2>Developer</h2>
+        <ul class="skills-list">
+            <li>Git</li>
+            <li>GitLab</li>
+            <li>OpenShift</li>
+            <li>Kubernetes</li>
+            <li>Docker</li>
+            <li>OpenAPI</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    const text = "My Skills";
+    const typingElement = document.getElementById('typing');
+    let index = 0;
+
+    function type() {
+        if (index < text.length) {
+            typingElement.textContent += text[index];
+            index++;
+            setTimeout(type, 100); // Adjust typing speed here (in milliseconds)
+        }
+    }
+
+    window.onload = function() {
+        type();
+    };
+</script>
+
+</body>
+</html>

@@ -66,6 +66,21 @@
         .icons a {
             margin-left: 10px;
         }
+        #typing {
+            font-family: 'Courier New', monospace;
+            font-size: 24px;
+            white-space: pre;
+            border-right: 2px solid black;
+            display: inline-block;
+        }
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+        #typing {
+            animation: blink 0.5s step-end infinite alternate;
+        }
     </style>
 </head>
 <body>
@@ -75,6 +90,7 @@
   <div class="header-right">
     <a href="/">Home</a>
     <a class="active" href="/projects">Projects</a>
+    <a href="/skills">Skills</a>
     <a href="/resume">Resume</a>
     <a href="/hobbies">Hobbies</a>
   </div>
@@ -82,7 +98,7 @@
 
 <div class="project-list">
     <div class="center">
-        <h1>Projects</h1>
+        <div id="typing"></div>
     </div>
 
     <div class="project-container">
@@ -114,11 +130,26 @@
                 </a>
             </div>
         </div>
-
-        
     </div>
-
 </div>
+
+<script>
+    const text = "My Projects";
+    const typingElement = document.getElementById('typing');
+    let index = 0;
+
+    function type() {
+        if (index < text.length) {
+            typingElement.textContent += text[index];
+            index++;
+            setTimeout(type, 100); // Adjust typing speed here (in milliseconds)
+        }
+    }
+
+    window.onload = function() {
+        type();
+    };
+</script>
 
 </body>
 </html>

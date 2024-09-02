@@ -10,6 +10,12 @@
             margin: 0;
             font-family: 'Courier New', monospace;
             overflow-x: hidden; 
+
+            background-image: url('/static/images/background.jpg'); 
+            background-repeat: repeat; 
+            background-size: 5%; 
+            background-position: top left;
+            background-attachment: fixed; 
         }
         /* Loading In Animation */
         .content-wrapper {
@@ -50,9 +56,21 @@
         .header-right {
             float: right;
         }
+        .background {
+            background-image: url(/static/images/background.jpg); 
+            background-repeat: repeat;
+            background-size: 1%; 
+            background-color: (0.5);
+            background-position: top left; 
+            background-attachment: scroll; 
+        }
         .center {
             flex: 1;
             text-align: center;
+        }
+        .gap-space{
+            overflow: hidden;
+            padding: 20px 10px;
         }
         .container {
             display: flex;
@@ -172,10 +190,11 @@
 <body>
 
 <div class="header">
-    <a href="/" class="logo">Arely's Website</a>
+    <a href="/" class="logo">Arely's Portfolio</a>
     <div class="header-right">
         <a class="active" href="/">Home</a>
         <a href="/projects">Projects</a>
+        <a href="#experience">Experience</a>
         <a href="/skills">Skills</a>
         <a href="/resume">Resume</a>
         <a href="/hobbies">Hobbies</a>
@@ -184,6 +203,8 @@
 
 <!-- Loading In Animation -->
 <div class="content-wrapper">
+
+<div class="background"></div>
 
 <div class="container">
     <div class="left">
@@ -203,14 +224,14 @@
     <div class="right">
         <div id="typing"></div>
         <p>My name is Arely Rosendes</p>
-        <p>I'm a third-year student at UC Santa Cruz</p>
+        <p>I am a Computer Science student at UC Santa Cruz. I am particularly interested in the field of software development, with a focus on front-end development. I am thrilled by the limitless possibilities that Computer Science offers and am eager to explore them.</p>
     </div>
 </div>
 
 <hr style="border: 1px solid #000000; width: 100%;">
 
 
-<div class="center">
+<div class="center" id="experience">
     <h1>Experience</h1>
 </div>
 
@@ -273,7 +294,15 @@
     </div>
 </div>
 </div>
+</div>
 
+<div class="gap-space"></div>
+<div class="gap-space"></div>
+<div class="gap-space"></div>
+
+<hr style="border: 1px solid #000000; width: 100%;">
+
+<!-- Animation End -->
 </div>
 
 <script>

@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Arely Rosendes</title>
-    <link rel="icon" href="/static/images/headshot.jpg" type="image">
+    <link rel="icon" href="/static/images/AR-logo.jpg" type="image">
     <style>
         body { 
             margin: 0;
             font-family: 'Courier New', monospace;
             overflow-x: hidden; 
+            position: relative; 
 
             background-image: url('/static/images/background.jpg'); 
             background-repeat: repeat; 
@@ -31,34 +32,80 @@
             }
         }
         .header {
-            position: sticky;
+            position: flex;
             top: 0;
-            background-color: #e9c7c1;
-            padding: 20px 10px;
+            background-color: transparent;
+            padding: 10px 10px;
             z-index: 1000;
             width: 100%;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .header a {
-            float: left;
             color: black;
             text-align: center;
             padding: 12px;
             text-decoration: none;
             font-size: 18px; 
             line-height: 25px;
-            border-radius: 4px;
+            border-radius: 15px;
         }
         .header a.logo {
-            font-size: 25px;
-            font-weight: bold;
+            display: inline-block;
         }
-        .header a:hover {
-            background-color: white;
-            color: black;
-        }
+        .header a.logo img {
+            display: block; 
+            height: auto; 
+            width: auto; 
+            max-height: 50px; 
+            margin: 0px auto;
+            border-radius: 15px;
+}
         .header-right {
             float: right;
+        }
+        .header-right a {
+            background-color: #f0f0f0; /* Default background color for links */
+            margin: 0 5px;
+        }
+        .header-right a.home {
+            background-color: #ffcccb; /* Light red */
+        }
+        .header-right a.home:hover {
+            background-color: #ff9999; /* Darker red on hover */
+        }
+        .header-right a.projects {
+            background-color: #ccffcc; /* Light green */
+        }
+        .header-right a.projects:hover {
+            background-color: #99ff99; /* Darker green on hover */
+        }
+        .header-right a.experience {
+            background-color: #cce5ff; /* Light blue */
+        }
+        .header-right a.experience:hover {
+            background-color: #99ccff; /* Darker blue on hover */
+        }
+        .header-right a.skills {
+            background-color: #fff3e6; /* Light orange */
+        }
+        .header-right a.skills:hover {
+            background-color: #ffd1b3; /* Darker orange on hover */
+        }
+        .header-right a.resume {
+            background-color: #d9f7be; /* Light green */
+        }
+        .header-right a.resume:hover {
+            background-color: #b3e6a6; /* Darker green on hover */
+        }
+        .header-right a.hobbies {
+            background-color: #fbe5d6; /* Light peach */
+        }
+        
+        .header-right a.hobbies:hover {
+            background-color: #f7b9a1; /* Darker peach on hover */
         }
         .background {
             background-image: url(/static/images/background.jpg); 
@@ -133,6 +180,7 @@
             display: inline-block;
             text-align: center;
             margin-right: 200px auto;
+            font-weight: bold;
         }
         @keyframes blink {
             50% {
@@ -151,6 +199,7 @@
             width: 1200px;
             height: 80px; 
             margin: 0 auto;
+            border: 5px solid black;
             border-radius: 30px;
             position: relative;
             transition: all 0.3s ease;
@@ -175,13 +224,12 @@
         }
         .expandable-button {
             background-color: transparent;
-            padding: 5px 10px;
-            margin: 0 20px;
+            padding: 5px 5px;
+            margin: 0 10px;
             margin-top: 15px;
             margin-left: 20px;
             border: none;
             cursor: pointer;
-            font-size: 16px;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -192,14 +240,14 @@
         .expandable-button img {
             width: 100px;
             height: auto;
-            border-radius: 50px;
+            border-radius: 5px;
             z-index: 4;
         }
         .expandable-button:hover {
-            background-color: white;
-            color: black;
-            transition: background-color 0.3s ease;
+            background-color: #e9c7c1;
+            border: 5px solid black;
             border-radius: 50px;
+            transition: background-color 0.3s ease;
         }
         .expandable-content {
             max-height: 0;
@@ -208,7 +256,7 @@
             padding: 0 10px;
             position: absolute; 
             top: 100%; 
-            background-color: #f1f1f1;
+            background-color: #f5f5f5;
             border-radius: 10px;
             width: 150px; 
             height: auto;
@@ -230,6 +278,7 @@
             max-width: 1200px; 
             height: 180px; 
             margin: 0 auto;
+            border: 5px solid black;
             border-radius: 30px;
             transition: all 0.3s ease;
         }
@@ -251,12 +300,14 @@
             width: 100%;
             height: 100%;
             backface-visibility: hidden; 
-            border-radius: 10px;
+            border-radius: 30px;
+            border: 5px solid black;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: beige;
+            background-color: #f5f5f5;
             flex-direction: column;
+            text-align: center;
         }
 
         .card-back {
@@ -267,30 +318,32 @@
             transform: rotateY(180deg); 
         }
         .skills-text {
-            flex: 1;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             margin: 5px;
         }
         .skills-text img {
             display: block;
             margin: 10px auto;
-            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <a href="/" class="logo">Arely's Portfolio</a>
+    <a href="/" class="logo">
+        <img src="{{ url_for('static', filename='images/AR-logo.jpg') }}" alt="Logo" />
+    </a>
     <div class="header-right">
-        <a class="active" href="/">Home</a>
-        <a href="/projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="/resume">Resume</a>
-        <a href="/hobbies">Hobbies</a>
+      <a href="/" class="home">Home</a>
+      <a href="/projects" class="projects">Projects</a>
+      <a href="#experience" class="experience">Experience</a>
+      <a href="#skills" class="skills">Skills</a>
+      <a href="/resume" class="resume">Resume</a>
     </div>
-</div>
+  </div>
 
 <!-- Loading In Animation -->
 <div class="content-wrapper">
@@ -320,11 +373,13 @@
     </div>
 </div>
 
+<div id="experience"></div>
 <hr style="border: 1px solid #000000; width: 100%;">
 
 <!-- Experience Section -->
-<div class="center" id="experience">
+<div class="center">
     <h1>Experience</h1>
+    <h3>Expand For More Information!</h3>
 </div>
 
 <div class="experience-container">
@@ -335,10 +390,10 @@
         <img src="{{ url_for('static', filename='images/llnl.jpg') }}" alt="LLNL Expand">
     </button>
     <div class="expandable-content">
-        <h3>Lawrence Livermore National Labatory</h3>
+        <h3>Lawrence Livermore National Laboratory</h3>
         <small>June 2024 - August 2024</small>
         <p><b>DevOps Intern</b></p>
-        <p><small>I developed an AI user interface employing PaperQA with the Python library Gradio, enabling users to upload files and obtain cited, file-based answers to their questions. I implemented a conversation storage system to save and retrieve user interactions and utilized PyCharm for development, managing version control through Git and pushing code to GitLab. The application was deployed using GitLab and OpenShift, ensuring proper containerization of necessary files and leveraging GitLab Runners for efficient pipeline execution. Additionally, I integrated authentication features using OpenShift OAuth Proxy to provide secure access control.</small></p>
+        <p><small>Developed an AI user interface employing PaperQA with the Python library Gradio, enabling users to upload files and obtain cited, file-based answers to their questions. I implemented a conversation storage system to save and retrieve user interactions and utilized PyCharm for development, managing version control through Git and pushing code to GitLab. The application was deployed using GitLab and OpenShift, ensuring proper containerization of necessary files and leveraging GitLab Runners for efficient pipeline execution. Additionally, I integrated authentication features using OpenShift OAuth Proxy to provide secure access control.</small></p>
     </div>
 </div>
 </div>
@@ -394,11 +449,13 @@
 
 <div class="mega-gap-space"></div>
 
+<div  id="skills"></div>
 <hr style="border: 1px solid #000000; width: 100%;">
 
 <!-- Skills Section -->
-<div class="center" id="skills">
+<div class="center">
     <h1>Skills</h1>
+    <h3>Flip Cards For More Information!</h3>
 </div>
 
 <!-- Back-End Developer Card -->
@@ -524,5 +581,16 @@ skillContainers.forEach(container => {
 });
 </script>
 
+<script>
+    document.addEventListener('mousemove', (e) => {
+    const background = document.querySelector('.background');
+    const x = e.clientX;
+    const y = e.clientY;
+
+    // Create a radial gradient centered at the mouse position
+    background.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.5), transparent)`;
+});
+
+</script>
 </body>
 </html>

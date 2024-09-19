@@ -59,7 +59,7 @@
             display: block; 
             height: auto; 
             width: auto; 
-            max-height: 50px; 
+            max-height: 60px; 
             margin: 0px auto;
             border-radius: 15px;
 }
@@ -115,7 +115,7 @@
             background-position: top left; 
             background-attachment: scroll; 
         }
-        .container {
+        /* .container {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -124,7 +124,7 @@
             border-radius: 20px;
             max-width: 1000px; 
             margin: 0 auto; 
-        }
+        } */
         .center {
             flex: 1;
             text-align: center;
@@ -136,6 +136,10 @@
         .mega-gap-space {
             overflow: hidden;
             padding: 300px 10px;
+        }
+        .gap-space {
+            overflow: hidden;
+            padding: 200px 10px;
         }
         .intro-container {
             display: flex;
@@ -267,6 +271,7 @@
             max-height: 800px;
             width: 300px;
             padding: 10px;
+
         }
         .skills-container {
             background-color: #e9c7c1;
@@ -293,6 +298,10 @@
             position: relative;
             transform-style: preserve-3d; 
             transition: transform 0.6s;
+        }
+        .card:hover {
+            transform: translateY(-20px); /* Moves the card 10px upwards */
+            border-radius: 50px;
         }
         .card-front, .card-back {
             text-align: center;
@@ -322,7 +331,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 5px;
+            margin: 1px;
         }
         .skills-text img {
             display: block;
@@ -360,7 +369,7 @@
             <a href="https://linkedin.com/in/arelyrosendes" target="_blank">
                 <img src="{{ url_for('static', filename='images/linkedin.jpg') }}" alt="LinkedIn" width="60">
             </a>
-            <a href="mailto:arelyrosendes@gmail.com?subject=Hello%20Arely&body=I%20would%20like%20to%20connect%20with%20you.">
+            <a href="#" onclick="copyEmail()">
                 <img src="{{ url_for('static', filename='images/email.jpg') }}" alt="Email" width="60">
             </a>
         </div>
@@ -379,7 +388,7 @@
 <!-- Experience Section -->
 <div class="center">
     <h1>Experience</h1>
-    <h3>Expand For More Information!</h3>
+    <h3>Click To Expand For More Information!</h3>
 </div>
 
 <div class="experience-container">
@@ -444,6 +453,7 @@
     </div>
 </div>
 </div>
+
 <!-- Experience Container Ends -->
 </div>
 
@@ -458,84 +468,82 @@
     <h3>Flip Cards For More Information!</h3>
 </div>
 
-<!-- Back-End Developer Card -->
+<!-- Programming Languages Card -->
 <div class="skills-container">
     <div class="each-skill-container">
         <div class="card">
             <div class="card-front">
-                <h1>Back-End Developer</h1>
+                <h1>Programming Languages</h1>
                 <div class="skills-text">
                     <img src="{{ url_for('static', filename='images/back-end.jpg') }}" alt="Skill Icon" width="100">
-                    <p>Flip for more information!</p>
                 </div>
             </div>
             <div class="card-back">
-                <h3>Back-End Developer</h3>
+                <h4>Programming Languages:</h4>
                 <div class="skills-text">
-                    <p><b>Languages:</b></p>
-                    <p>Python, Java, MIPS Assembly, C++</p>
-                    <p><b>Tools:</b></p>
-                    <p>VS Code</p>
-                    <p>PyCharm</p>
-                    <p>Mars MIPS IDE</p>
-                    <p>Xcode</p>
+                    <p>Python</p>
+                    <p>C/C++</p>
+                    <p>Java</p>
+                    <p>MIPS Assembly</p>
+                    <p>Bash/Shell Scripting</p>
                     </div>
             </div>
         </div>
     </div>
 
-<!-- Front-End Developer Card -->
+<!-- Web & Development Tools Card -->
     <div class="each-skill-container">
         <div class="card">
             <div class="card-front">
-                <h1>Front-End Developer</h1>
+                <h1>Web & Development</h1>
                 <div class="skills-text">
                     <img src="{{ url_for('static', filename='images/front-end.jpg') }}" alt="Front End Logo" width="100">
-                    <p>Flip for more information!</p>
                 </div>
             </div>
             <div class="card-back">
-                <h3>Front-End Developer</h3>
+                <h4>Web & Development Tools</h4>
                 <div class="skills-text">
-                    <p><b>Languages:</b></p>
-                    <p>HTML, CSS, Javascript</p>
+                    <p><b>Web:</b></p>
+                    <p>HTML/CSS</p>
+                    <p>Javascript</p>
                     <p><b>Tools:</b></p>
-                    <p>Github</p>
+                    <p>VSCode</p>
+                    <p>PyCharm</p>
+                    <p>Mars MIPS IDE</p>
+                    <p>XCode</p>
                 </div>
             </div>
         </div>
     </div>
 
-<!-- Designer Developer Card -->
+<!-- DevOps Tools Card -->
     <div class="each-skill-container">
         <div class="card">
             <div class="card-front">
-                <h1>Designer</h1>
+                <h1>DevOps Tools</h1>
                 <div class="skills-text">
                     <img src="{{ url_for('static', filename='images/designer.jpg') }}" alt="Front End Logo" width="100">
-                    <p>Flip for more information!</p>
                 </div>
             </div>
             <div class="card-back">
-                <h3>Designer</h3>
+                <h4>DevOps Tools</h4>
                 <div class="skills-text">
-                    <p><b>Designer</b></p>
-                    <p>Web, Apps, Logo</p>
-                    <p><b>My Tools:</b></p>
-                    <p>Figma</p>
-                    <p>Canva</p>
-                    <p>Procreate</p>
+                    <p>Git</p>
+                    <p>Gitlab</p>
+                    <p>OpenShift</p>
+                    <p>Kubernetes</p>
+                    <p>Docker</p>
+                    <p>OpenAPI</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="mega-gap-space"></div>
+<div class="gap-space"></div>
 
 
 <hr style="border: 1px solid #000000; width: 100%;">
-
 
 <!-- Animation End -->
 </div>
@@ -568,6 +576,16 @@
             this.classList.toggle('active');
         });
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.getElementById('toggle-button');
+            const megaGapSpace = document.getElementById('mega-gap-space');
+
+            toggleButton.addEventListener('click', function() {
+                megaGapSpace.classList.toggle('active');
+            });
+        });
+
 </script>
 
 <!-- Flipping Card Animation Script -->
@@ -592,5 +610,20 @@ skillContainers.forEach(container => {
 });
 
 </script>
+
+<script>
+    function copyEmail() {
+        const email = 'arelyrosendes@gmail.com';
+        const tempInput = document.createElement('input');
+        tempInput.value = email;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        alert('Email address copied to clipboard!');
+    }
+</script>
+
+
 </body>
 </html>

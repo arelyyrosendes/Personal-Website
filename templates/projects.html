@@ -120,7 +120,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 2px solid black;
         }
         .left {
             flex: 1;
@@ -130,7 +130,7 @@
         .left img {
             width: 100%;
             height: auto;
-            max-width: 300px;
+            max-width: 400px;
         }
         .right  {
             flex: 1;
@@ -139,7 +139,7 @@
         .icons {
           display: flex;
           justify-content: center;
-          margin-top: 10px;
+          align-items: center;
         }
         .icons a {
             margin-left: 10px;
@@ -180,6 +180,7 @@
 <div class="project-list">
     <div class="center">
         <div id="typing"></div>
+        
     </div>
 
     <div class="project-container">
@@ -188,9 +189,11 @@
         </div>
         <div class="right">
             <h3>AquaVenture Game</h3>
-            <p>This is the AquaVenture Game</p>
+            <p>This is the AquaVenture Game. This game is designed to educate the user on our marine life while creating a peaceful game. The aim of the game is for the user to collect pieces of trash displayed on the screen, and along the way, they may collide with pufferfish or goldfish and be given fun facts about these marine animals. The user gets to play as a submarine and move across the screen to collect the trash and reach the bottom of the screen, where they will then be prompted to continue to the next level.
+            </p>
             <div class="icons">
-                <a href="https://github.com/arelyyrosendes" target="_blank">
+                <img src="{{ url_for('static', filename='images/asm-icon.jpg') }}" alt="ASM-Icon" width="55">
+                <a href="https://github.com/arelyyrosendes/Aquaventure" target="_blank">
                     <img src="{{ url_for('static', filename='images/code.jpg') }}" alt="GitHub" width="100">
                 </a>
             </div>
@@ -199,20 +202,56 @@
 
     <div class="project-container">
         <div class="left">
-            <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="aquaventure" width="800">
+            <img src="{{ url_for('static', filename='images/CO2.jpg') }}" alt="aquaventure" width="800">
         </div>
 
         <div class="right">
-            <h3>Project 2</h3>
-            <p>This is the second project</p>
+            <h3>Carbon Footprint Calculator + Quiz</h3>
+            <p>This project includes two main features: a calculator and a climate change quiz. The calculator offers users a simple interface to answer questions about everyday habits, such as transportation, food choices, and electronics usage. Based on their responses, the program calculates a score to reflect the environmental impact of these activities. The quiz, aimed at raising climate change awareness, uses a directed acyclic graph (DAG) structure to present multiple-choice questions. Correct answers allow users to advance, while incorrect answers trigger follow-up questions. The quiz tracks scores, offers the option to quit, and includes a leaderboard to encourage engagement and learning.</p>
             <div class="icons">
-                <a href="https://github.com/arelyyrosendes" target="_blank">
+                <img src="{{ url_for('static', filename='images/c++-icon.jpg') }}" alt="ASM-Icon" width="55">
+                <a href="https://github.com/arelyyrosendes/Carbon-Footprint-Calculator-Quiz" target="_blank">
                     <img src="{{ url_for('static', filename='images/code.jpg') }}" alt="GitHub" width="100">
                 </a>
             </div>
         </div>
     </div>
+
+    <div class="project-container">
+        <div class="left">
+            <img src="{{ url_for('static', filename='images/salesperson-calculator.jpg') }}" alt="aquaventure" width="800">
+        </div>
+
+        <div class="right">
+            <h3>Salesperson Salary Calculator</h3>
+            <p>The SalaryCalculator calculates the total salary using a base salary of $200 and a 9% commission on sales. It tracks how many employees fall within specific salary ranges and displays this in a salary table. Additionally, it randomly generates motivational phrases like "Excellent!" to celebrate employee performance.</p>
+            <div class="icons">
+                <img src="{{ url_for('static', filename='images/java-icon.jpg') }}" alt="ASM-Icon" width="55">
+                <a href="https://github.com/arelyyrosendes/Salesperson-Salary-Calculator-Chart" target="_blank">
+                    <img src="{{ url_for('static', filename='images/code.jpg') }}" alt="GitHub" width="100">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-container">
+        <div class="left">
+            <img src="{{ url_for('static', filename='images/pw-generator.jpg') }}" alt="aquaventure">
+        </div>
+        <div class="right">
+            <h3>Random Password Generator</h3>
+            <p>This program allows you to create a secure and randomized password based on your preferences. You can specify the number of letters, symbols, and numbers to include in your password. The script then shuffles these characters to generate a unique password that enhances your security. Simply input your requirements, and let the script do the rest!</p>
+            <div class="icons">
+                <img src="{{ url_for('static', filename='images/python-icon.jpg') }}" alt="ASM-Icon" width="55">
+                <a href="https://github.com/arelyyrosendes/Random-Password-Generator" target="_blank">
+                    <img src="{{ url_for('static', filename='images/code.jpg') }}" alt="GitHub" width="100">
+                </a>
+            </div>
+        </div>
+    </div>
+
 </div>
+
 
 <script>
     const text = "My Projects";

@@ -1,166 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body { 
-            margin: 0;
-            font-family: 'Courier New', monospace;
-            overflow-x: hidden; 
-            position: relative; 
-
-            background-image: url('/static/images/background.jpg'); 
-            background-repeat: repeat; 
-            background-size: 5%; 
-            background-position: top left;
-            background-attachment: fixed; 
-        }
-        /* Loading In Animation */
-        .content-wrapper {
-            opacity: 0;
-            transform: translateY(50px); 
-            animation: slideUp 1s forwards; 
-        }
-
-        @keyframes slideUp {
-            to {
-                opacity: 1;
-                transform: translateY(0); 
-            }
-        }
-        .header {
-            position: flex;
-            top: 0;
-            background-color: transparent;
-            padding: 10px 10px;
-            z-index: 1000;
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .header a {
-            color: black;
-            text-align: center;
-            padding: 12px;
-            text-decoration: none;
-            font-size: 18px; 
-            line-height: 25px;
-            border-radius: 15px;
-        }
-        .header a.logo {
-            display: inline-block;
-        }
-        .header a.logo img {
-            display: block; 
-            height: auto; 
-            width: auto; 
-            max-height: 50px; 
-            margin: 0px auto;
-            border-radius: 15px;
-}
-        .header-right {
-            float: right;
-        }
-        .header-right a {
-            background-color: #f0f0f0; /* Default background color for links */
-            margin: 0 5px;
-        }
-        .header-right a.home {
-            background-color: #ffcccb; /* Light red */
-        }
-        .header-right a.home:hover {
-            background-color: #ff9999; /* Darker red on hover */
-        }
-        .header-right a.projects {
-            background-color: #ccffcc; /* Light green */
-        }
-        .header-right a.projects:hover {
-            background-color: #99ff99; /* Darker green on hover */
-        }
-        .header-right a.experience {
-            background-color: #cce5ff; /* Light blue */
-        }
-        .header-right a.experience:hover {
-            background-color: #99ccff; /* Darker blue on hover */
-        }
-        .header-right a.skills {
-            background-color: #fff3e6; /* Light orange */
-        }
-        .header-right a.skills:hover {
-            background-color: #ffd1b3; /* Darker orange on hover */
-        }
-        .header-right a.resume {
-            background-color: #d9f7be; /* Light green */
-        }
-        .header-right a.resume:hover {
-            background-color: #b3e6a6; /* Darker green on hover */
-        }
-        .header-right a.hobbies {
-            background-color: #fbe5d6; /* Light peach */
-        }
-        .header-right a.hobbies:hover {
-            background-color: #f7b9a1; /* Darker peach on hover */
-        }
-        .background {
-            background-image: url(/static/images/background.jpg); 
-            background-repeat: repeat;
-            background-size: 1%; 
-            background-color: (0.5);
-            background-position: top left; 
-            background-attachment: scroll; 
-        }
-        .center {
-            flex: 1;
-            text-align: center;
-        }
-        .project-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            border-bottom: 2px solid black;
-        }
-        .left {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .left img {
-            width: 100%;
-            height: auto;
-            max-width: 400px;
-        }
-        .right  {
-            flex: 1;
-            text-align: center;
-        }
-        .icons {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        .icons a {
-            margin-left: 10px;
-        }
-        #typing {
-            font-family: 'Courier New', monospace;
-            font-size: 32px;
-            white-space: pre;
-            border-right: 2px solid black;
-            display: inline-block;
-            font-weight: bold;
-        }
-        @keyframes blink {
-            50% {
-                border-color: transparent;
-            }
-        }
-        #typing {
-            animation: blink 0.5s step-end infinite alternate;
-        }
-    </style>
+    <title>Arely Rosendes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mobile.css') }}">
+    <script defer src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <link rel="icon" href="/static/images/AR-logo.jpg" type="image">
 </head>
 <body>
 
@@ -168,6 +15,8 @@
     <a href="/" class="logo">
         <img src="{{ url_for('static', filename='images/AR-logo.jpg') }}" alt="Logo" />
     </a>
+    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+
     <div class="header-right">
       <a href="/" class="home">Home</a>
       <a href="/projects" class="projects">Projects</a>
@@ -179,7 +28,7 @@
 
 <div class="project-list">
     <div class="center">
-        <div id="typing"></div>
+        <div id="typing_project"></div>
         
     </div>
 
@@ -189,9 +38,10 @@
         </div>
         <div class="right">
             <h3>AquaVenture Game</h3>
-            <p>This is the AquaVenture Game. This game is designed to educate the user on our marine life while creating a peaceful game. The aim of the game is for the user to collect pieces of trash displayed on the screen, and along the way, they may collide with pufferfish or goldfish and be given fun facts about these marine animals. The user gets to play as a submarine and move across the screen to collect the trash and reach the bottom of the screen, where they will then be prompted to continue to the next level.
-            </p>
-            <div class="icons">
+            <div class="right-text-projects">
+                <p>This is the AquaVenture Game. This game is designed to educate the user on our marine life while creating a peaceful game. The aim of the game is for the user to collect pieces of trash displayed on the screen, and along the way, they may collide with pufferfish or goldfish and be given fun facts about these marine animals. The user gets to play as a submarine and move across the screen to collect the trash and reach the bottom of the screen, where they will then be prompted to continue to the next level.</p>
+            </div>
+                <div class="icons">
                 <img src="{{ url_for('static', filename='images/asm-icon.jpg') }}" alt="ASM-Icon" width="55">
                 <a href="https://github.com/arelyyrosendes/Aquaventure" target="_blank">
                     <img src="{{ url_for('static', filename='images/code.jpg') }}" alt="GitHub" width="100">
@@ -207,7 +57,9 @@
 
         <div class="right">
             <h3>Carbon Footprint Calculator + Quiz</h3>
-            <p>This project includes two main features: a calculator and a climate change quiz. The calculator offers users a simple interface to answer questions about everyday habits, such as transportation, food choices, and electronics usage. Based on their responses, the program calculates a score to reflect the environmental impact of these activities. The quiz, aimed at raising climate change awareness, uses a directed acyclic graph (DAG) structure to present multiple-choice questions. Correct answers allow users to advance, while incorrect answers trigger follow-up questions. The quiz tracks scores, offers the option to quit, and includes a leaderboard to encourage engagement and learning.</p>
+            <div class="right-text-projects">
+                <p>This project includes two main features: a calculator and a climate change quiz. The calculator offers users a simple interface to answer questions about everyday habits, such as transportation, food choices, and electronics usage. Based on their responses, the program calculates a score to reflect the environmental impact of these activities. The quiz, aimed at raising climate change awareness, uses a directed acyclic graph (DAG) structure to present multiple-choice questions. Correct answers allow users to advance, while incorrect answers trigger follow-up questions. The quiz tracks scores, offers the option to quit, and includes a leaderboard to encourage engagement and learning.</p>
+            </div>
             <div class="icons">
                 <img src="{{ url_for('static', filename='images/c++-icon.jpg') }}" alt="ASM-Icon" width="55">
                 <a href="https://github.com/arelyyrosendes/Carbon-Footprint-Calculator-Quiz" target="_blank">
@@ -217,6 +69,7 @@
         </div>
     </div>
 
+
     <div class="project-container">
         <div class="left">
             <img src="{{ url_for('static', filename='images/salesperson-calculator.jpg') }}" alt="aquaventure" width="800">
@@ -224,13 +77,15 @@
 
         <div class="right">
             <h3>Salesperson Salary Calculator</h3>
-            <p>The SalaryCalculator calculates the total salary using a base salary of $200 and a 9% commission on sales. It tracks how many employees fall within specific salary ranges and displays this in a salary table. Additionally, it randomly generates motivational phrases like "Excellent!" to celebrate employee performance.</p>
-            <div class="icons">
-                <img src="{{ url_for('static', filename='images/java-icon.jpg') }}" alt="ASM-Icon" width="55">
-                <a href="https://github.com/arelyyrosendes/Salesperson-Salary-Calculator-Chart" target="_blank">
-                    <img src="{{ url_for('static', filename='images/code.jpg') }}" alt="GitHub" width="100">
-                </a>
+            <div class="right-text-projects">
+                <p>The SalaryCalculator calculates the total salary using a base salary of $200 and a 9% commission on sales. It tracks how many employees fall within specific salary ranges and displays this in a salary table. Additionally, it randomly generates motivational phrases like "Excellent!" to celebrate employee performance.</p>
             </div>
+            <div class="icons">
+            <img src="{{ url_for('static', filename='images/java-icon.jpg') }}" alt="ASM-Icon" width="55">
+            <a href="https://github.com/arelyyrosendes/Salesperson-Salary-Calculator-Chart" target="_blank">
+                <img src="{{ url_for('static', filename='images/code.jpg') }}" alt="GitHub" width="100">
+            </a>
+        </div>
         </div>
     </div>
 
@@ -240,7 +95,9 @@
         </div>
         <div class="right">
             <h3>Random Password Generator</h3>
-            <p>This program allows you to create a secure and randomized password based on your preferences. You can specify the number of letters, symbols, and numbers to include in your password. The script then shuffles these characters to generate a unique password that enhances your security. Simply input your requirements, and let the script do the rest!</p>
+            <div class="right-text-projects">
+                <p>This program allows you to create a secure and randomized password based on your preferences. You can specify the number of letters, symbols, and numbers to include in your password. The script then shuffles these characters to generate a unique password that enhances your security. Simply input your requirements, and let the script do the rest!</p>
+            </div>
             <div class="icons">
                 <img src="{{ url_for('static', filename='images/python-icon.jpg') }}" alt="ASM-Icon" width="55">
                 <a href="https://github.com/arelyyrosendes/Random-Password-Generator" target="_blank">
@@ -250,26 +107,8 @@
         </div>
     </div>
 
+
 </div>
-
-
-<script>
-    const text = "My Projects";
-    const typingElement = document.getElementById('typing');
-    let index = 0;
-
-    function type() {
-        if (index < text.length) {
-            typingElement.textContent += text[index];
-            index++;
-            setTimeout(type, 100); // Adjust typing speed here (in milliseconds)
-        }
-    }
-
-    window.onload = function() {
-        type();
-    };
-</script>
 
 </body>
 </html>

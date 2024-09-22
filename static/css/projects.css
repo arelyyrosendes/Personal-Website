@@ -1,0 +1,163 @@
+body { 
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    overflow-x: hidden; 
+    position: relative; 
+
+    background-image: url('/static/images/background.jpg'); 
+    background-repeat: repeat; 
+    background-size: 5%; 
+    background-position: top left;
+    background-attachment: fixed; 
+}
+/* Loading In Animation */
+.content-wrapper {
+    opacity: 0;
+    transform: translateY(50px); 
+    animation: slideUp 1s forwards; 
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+.header {
+    position: flex;
+    top: 0;
+    background-color: transparent;
+    padding: 10px 10px;
+    z-index: 1000;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header a {
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 15px;
+}
+.header a.logo {
+    display: inline-block;
+}
+.header a.logo img {
+    display: block; 
+    height: auto; 
+    width: auto; 
+    max-height: 50px; 
+    margin: 0px auto;
+    border-radius: 15px;
+}
+.header-right {
+    float: right;
+}
+.header-right a {
+    background-color: #f0f0f0; /* Default background color for links */
+    margin: 0 5px;
+}
+.header-right a.home {
+    background-color: #ffcccb; /* Light red */
+}
+.header-right a.home:hover {
+    background-color: #ff9999; /* Darker red on hover */
+}
+.header-right a.projects {
+    background-color: #ccffcc; /* Light green */
+}
+.header-right a.projects:hover {
+    background-color: #99ff99; /* Darker green on hover */
+}
+.header-right a.experience {
+    background-color: #cce5ff; /* Light blue */
+}
+.header-right a.experience:hover {
+    background-color: #99ccff; /* Darker blue on hover */
+}
+.header-right a.skills {
+    background-color: #fff3e6; /* Light orange */
+}
+.header-right a.skills:hover {
+    background-color: #ffd1b3; /* Darker orange on hover */
+}
+.header-right a.resume {
+    background-color: #d9f7be; /* Light green */
+}
+.header-right a.resume:hover {
+    background-color: #b3e6a6; /* Darker green on hover */
+}
+.header-right a.hobbies {
+    background-color: #fbe5d6; /* Light peach */
+}
+.header-right a.hobbies:hover {
+    background-color: #f7b9a1; /* Darker peach on hover */
+}
+.background {
+    background-image: url(/static/images/background.jpg); 
+    background-repeat: repeat;
+    background-size: 1%; 
+    background-color: (0.5);
+    background-position: top left; 
+    background-attachment: scroll; 
+}
+.center {
+    flex: 1;
+    text-align: center;
+}
+.project-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid black;
+    margin: 30px;
+}
+
+.left {
+    flex: 1;
+    text-align: center;
+}
+
+.left img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+}
+.right  {
+    flex: 1;
+    text-align: center;
+}
+.right-text-projects {
+    flex: 1;
+    text-align: center;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icons a {
+    margin-left: 10px;
+}
+#typing {
+    font-family: 'Courier New', monospace;
+    font-size: 32px;
+    white-space: pre;
+    border-right: 2px solid black;
+    display: inline-block;
+    font-weight: bold;
+}
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+#typing {
+    animation: blink 0.5s step-end infinite alternate;
+}

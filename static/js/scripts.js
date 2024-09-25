@@ -3,17 +3,13 @@ const text = "Hi, I'm Arely";
 const typingElement = document.getElementById('typing');
 let index = 0;
 
-    function type() {
-        if (index < text.length) {
-            typingElement.textContent += text[index];
-            index++;
-            setTimeout(type, 100);
-        }
+function type() {
+    if (index < text.length) {
+        typingElement.textContent += text[index];
+        index++;
+        setTimeout(type, 100);
     }
-
-    window.onload = function() {
-        type();
-    };
+}
 
     const buttons = document.querySelectorAll('.expandable-button');
 
@@ -79,39 +75,35 @@ skillContainers.forEach(container => {
         });
     });
     
-    // Projects File
-    const text_project = "My Projects";
-    const typingElement_project = document.getElementById('typing_project');
-    let index_project = 0;
+// Projects File
+const text_project = "My Projects";
+const typingElement_project = document.getElementById('typing_project');
+let index_project = 0;
 
-    function type() {
-        if (index_project < text.length
-
-        ) {
-            typingElement_project.textContent += text[index_project];
-            index_project++;
-            setTimeout(type, 100); // Adjust typing speed here (in milliseconds)
-        }
+function type_project() {
+    if (index_project < text_project.length) {
+        typingElement_project.textContent_project += text_project[index_project];
+        index_project++;
+        setTimeout(type_project, 100); 
     }
+}
 
-    window.onload = function() {
-        type();
-    };
+// Resume File
+const text_resume = "My Resume";
+const typingElement_resume = document.getElementById('typing_resume');
+let index_resume = 0;
 
-    // Resume File
-    const text_resume = "My Resume";
-    const typingElement_resume = document.getElementById('typing_resume');
-    let index_resume = 0;
-
-    function type() {
-        if (index_resume < text.length) {
-            typingElement.textContent += text[index_resume];
-            index_resume++;
-            setTimeout(type, 100); // Adjust typing speed here (in milliseconds)
-        }
+function type_resume() {
+    if (index_resume < text_resume.length) {
+        typingElement_resume.textContent_resume += text_resume[index_resume];
+        index_resume++;
+        setTimeout(type_resume, 100); 
     }
+}
 
-    window.onload = function() {
-        type();
-    };
-
+// Start typing effects when window loads
+window.onload = function() {
+    type();         // Start typing for home
+    type_project(); // Start typing for projects
+    type_resume();  // Start typing for resume
+};

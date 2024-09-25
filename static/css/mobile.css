@@ -44,7 +44,8 @@
     .menu-toggle {
         display: none;
     }
-}@media only screen and (min-width: 769px) {
+}
+@media only screen and (min-width: 769px) {
     .menu-toggle {
         display: none;  
     }
@@ -314,7 +315,8 @@
     color: black; 
 }
 .resume-viewer {
-    width: 70%; 
+    width: 100%; 
+    max-width: 300px;
     max-height: 900px;
     padding: 10px;
 }

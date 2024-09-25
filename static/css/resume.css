@@ -106,7 +106,7 @@ body {
     background-position: top left; 
     background-attachment: scroll; 
 }
-#typing {
+#typing_resume {
     font-family: 'Courier New', monospace;
     font-size: 32px;
     white-space: pre;
@@ -121,7 +121,7 @@ body {
         border-color: transparent;
     }
 }
-#typing {
+#typing_resume {
     animation: blink 0.5s step-end infinite alternate;
 }
 
@@ -157,7 +157,8 @@ body {
 .resume-viewer {
     display: flex; 
     flex-direction: column; 
-    width: 70%; 
+    width: 100%; 
+    max-width: 800px;
     height: 900px;
     max-height: 1000px; 
     overflow-y: auto; 

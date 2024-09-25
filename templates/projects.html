@@ -28,6 +28,7 @@
 
 <div class="project-list">
     <div class="center">
+        <h2>My Projects</h2>
         <div id="typing_project"></div>
         
     </div>
@@ -91,6 +92,27 @@
 
     <div class="project-container">
         <div class="left">
+            <video autoplay muted loop>
+                <source src="{{ url_for('static', filename='videos/andys-website.mp4') }}" type="video/mp4" width="800">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="right">
+            <h3>Website for Eelectrical Engineering Student</h3>
+            <div class="right-text-projects">
+                <p>Collaborated with an electrical engineering student to create a website portfolio that effectively showcases their personal projects, work experience, top skills, general skills, and provides easy access to their LinkedIn profile, GitHub, contact information, and resume.</p>
+            </div>
+            <div class="icons">
+                <img src="{{ url_for('static', filename='images/html-icon.jpg') }}" alt="ASM-Icon" width="55">
+                <a href="https://github.com/agonzalez85/andys-Website" target="_blank">
+                    <img src="{{ url_for('static', filename='images/code.jpg') }}" alt="GitHub" width="100">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-container">
+        <div class="left">
             <img src="{{ url_for('static', filename='images/pw-generator.jpg') }}" alt="aquaventure">
         </div>
         <div class="right">
@@ -106,7 +128,6 @@
             </div>
         </div>
     </div>
-
 
 </div>
 

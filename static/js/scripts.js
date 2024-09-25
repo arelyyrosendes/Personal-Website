@@ -19,30 +19,12 @@ function type() {
         });
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-            const toggleButton = document.getElementById('toggle-button');
-            const megaGapSpace = document.getElementById('mega-gap-space');
-
-            toggleButton.addEventListener('click', function() {
-                megaGapSpace.classList.toggle('active');
-            });
-        });
-
 const skillContainers = document.querySelectorAll('.each-skill-container');
 
 skillContainers.forEach(container => {
     container.addEventListener('click', function() {
         this.classList.toggle('flipped');
     });
-});
-
-    document.addEventListener('mousemove', (e) => {
-    const background = document.querySelector('.background');
-    const x = e.clientX;
-    const y = e.clientY;
-
-    // Create a radial gradient centered at the mouse position
-    background.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.5), transparent)`;
 });
 
     function copyEmail() {
@@ -57,6 +39,15 @@ skillContainers.forEach(container => {
     }
 
     document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.getElementById('toggle-button');
+        const megaGapSpace = document.getElementById('mega-gap-space');
+
+        toggleButton.addEventListener('click', function() {
+            megaGapSpace.classList.toggle('active');
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
         const menuToggle = document.querySelector('.menu-toggle');
         const headerRight = document.querySelector('.header-right');
 
@@ -66,14 +57,6 @@ skillContainers.forEach(container => {
         });
     });
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const headerRight = document.querySelector('.header-right');
-    
-        menuToggle.addEventListener('click', function() {
-            headerRight.classList.toggle('active'); // Toggle the 'active' class
-        });
-    });
     
 // Projects File
 const text_project = "My Projects";
